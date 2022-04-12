@@ -2,10 +2,10 @@ use anyhow::{anyhow, Error, Ok};
 use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize, Debug)]
-struct Person {
-    firstname: String,
-    lastname: String,
-    age: u32,
+pub struct Person {
+    pub firstname: String,
+    pub lastname: String,
+    pub age: u32,
 }
 
 impl Person {
