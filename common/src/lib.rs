@@ -9,7 +9,7 @@ pub struct Person {
 }
 
 impl Person {
-    fn validate(&self) -> Result<(), Error> {
+    pub fn validate(&self) -> Result<(), Error> {
         if self.firstname.is_empty() {
             Err(anyhow!("Invalid person, firstname should not be empty"))
         } else if self.lastname.is_empty() {
