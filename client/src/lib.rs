@@ -6,7 +6,6 @@ pub fn run() {
     window.alert_with_message("Hello Rust").unwrap();
 }
 
-
 #[cfg(test)]
 mod tests {
     #[test]

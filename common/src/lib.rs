@@ -1,32 +1,26 @@
 use anyhow::{anyhow, Error, Ok};
-use serde::{Serialize, Deserialize};
-
+use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize, Debug)]
 struct Person {
     firstname: String,
     lastname: String,
-    age: u32
+    age: u32,
 }
 
 impl Person {
-
-    fn validate(& self) -> Result<(), Error> {
+    fn validate(&self) -> Result<(), Error> {
         if self.firstname.is_empty() {
             Err(anyhow!("Invalid person, firstname should not be empty"))
-        }
-        else if self.lastname.is_empty() {
+        } else if self.lastname.is_empty() {
             Err(anyhow!("Invalid person, lastname should not be empty"))
-        }
-        else if self.age == 0 {
+        } else if self.age == 0 {
             Err(anyhow!("Invalid person, lastname should not be empty"))
-        }
-        else {
+        } else {
             Ok(())
         }
     }
 }
-
 
 #[cfg(test)]
 mod tests {
